@@ -10,4 +10,4 @@ server.get('/', (req, res) =>{
     return res.json('ok')
 })
 
-server.listen(process.env.PORT)
+server.listen(3000)
