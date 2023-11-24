@@ -7,7 +7,7 @@ const server = express();
 server.use(express.json());
 
 server.get('/', (req, res) =>{
-    return res.json('ok')
+    return res.json('Aplicação Rodando em EC2 AWS')
 })
 
-server.listen(process.env.PORT)
+server.listen(3000)
