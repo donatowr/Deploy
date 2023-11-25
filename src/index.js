@@ -1,4 +1,5 @@
 require('dotenv').config()
+const knex = require('./config')
 
 const express = require('express');
 
@@ -6,8 +7,11 @@ const server = express();
 
 server.use(express.json());
 
-server.get('/', (req, res) =>{
-    return res.json('Aplicação Rodando em EC2 AWS')
+const port = process.env.PORT || 3000
+
+server.get('/', async (req, res) =>{
+    const carros = await knex('carros');
+    return res.json(carros)
 })
 
-server.listen(3000)
+server.listen(port)
