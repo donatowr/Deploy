@@ -10,17 +10,7 @@ server.use(express.json());
 const port = process.env.PORT || 3000
 
 server.get('/', async (req, res) =>{
-
-    try {
-       
-
         return res.json('tudo certo')
-        
-    } catch (error) {
-        console.log(error.message);
-        return res.status(500).json({mensagem: 'Erro Server'});
-        
-    }
-})
+     })
 
 server.listen(port)
