@@ -1,5 +1,5 @@
 require('dotenv').config()
-const knex = require('./config')
+const knex = require('./conexao')
 
 const express = require('express');
 
@@ -14,10 +14,12 @@ server.get('/', async (req, res) =>{
     try {
         const carros = await knex('carro');
 
-        return res.json(carros)
+        return res.json('tudo certo')
         
     } catch (error) {
-        return res.status(500).json({mensagem: 'Erro Server'})
+        console.log(error.message);
+        return res.status(500).json({mensagem: 'Erro Server'});
+        
     }
 })
 
