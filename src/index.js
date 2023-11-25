@@ -16,8 +16,9 @@ try {
         
 } catch (error) {
         console.log(error.message);
-        return res.status(500).json({mensagem: "erro interno server"})
-}
+        
+        return res.status(500).json({mensagem: "erro interno server"})}
      })
+
 
 server.listen(port)

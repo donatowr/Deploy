@@ -2,11 +2,11 @@
 const knex = require('knex')({
     client: 'pg',
     connection: {
-      host : 'cubosdb.cwhglp5zhx80.us-east-1.rds.amazonaws.com',
-      port : 5432,
-      user : 'postgres',
-      password : 'don158692',
-      database : 'cubos_app',
+      host : process.env.PGHOST,
+      port : process.env.PGPORT,
+      user : process.env.PGUSER,
+      password : process.env.PGPASSWORD,
+      database : process.env.PGDATABASE,
       ssl: { rejectUnauthorized: false },
     }
   });
