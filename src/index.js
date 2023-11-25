@@ -10,7 +10,7 @@ server.use(express.json());
 const port = process.env.PORT || 3000
 
 server.get('/', async (req, res) =>{
-    const carros = await knex('carros');
+    const carros = await knex('carro');
     return res.json(carros)
 })
 
