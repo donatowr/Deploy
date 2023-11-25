@@ -12,7 +12,7 @@ const port = process.env.PORT || 3000
 server.get('/', async (req, res) =>{
 
     try {
-        const carros = await knex('carro');
+       
 
         return res.json('tudo certo')
         
